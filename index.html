@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>网页计算器</title>
+    <style>
+        body {
+            background-color: rgb(32, 39, 49);
+        }
+        
+        .title1 {
+            text-align: center;
+            color: rgb(197, 83, 0);
+        }
+        
+        .div1 {
+            text-align: center;
+            padding: 200px 0;
+        }
+        
+        #fixsize1 {
+            width: 20px;
+            text-align: center;
+        }
+        
+        #numb1 {
+            width: 150px;
+            padding-left: 10px;
+        }
+        
+        #numb2 {
+            width: 150px;
+            padding-left: 10px;
+        }
+        
+        #output {
+            width: 150px;
+            padding-left: 10px;
+        }
+        
+        .ins {
+            background: rgb(56, 60, 69);
+            text-align: left;
+            border-style: solid;
+            border-color: rgb(236, 236, 236);
+            border-width: 1px;
+            border-radius: 3px;
+            color: rgb(197, 83, 0);
+            height: 30px;
+            font-size: 16px;
+        }
+    </style>
+
+    <script>
+        function judging() {
+            var x;
+            if (window.event) {
+                x = event.keyCode;
+                if (x == 13) {
+                    myFunction();
+                }
+            }
+        }
+
+        function myFunction() {
+            var n1 = document.forms["form1"]["num1"].value;
+            var n2 = document.forms["form1"]["num2"].value;
+            var judge = document.forms["form1"]["options"].value;
+            var x = 0;
+            if (judge == 1) {
+                x = (n1 * 10 + n2 * 10) / 10;
+            } else if (judge == 2) {
+                x = n1 - n2;
+            } else if (judge == 3) {
+                x = n1 * n2;
+            } else {
+                x = n1 / n2;
+            }
+            document.getElementById("output").value = x;
+        }
+    </script>
+</head>
+
+
+
+<body>
+    <div class="div1">
+        <h1 class="title1">----Simple Calculator----</h1>
+        <form name="form1">
+            <input type="text" id="numb1" name="num1" placeholder="number1" class="ins">
+            <select class="ins" name="options">
+                <option value="1" selected>+</option>
+                <option value="2">-</option>
+                <option value="3">×</option>
+                <option value="4">÷</option>
+            </select>
+            <input type="text" id="numb2" name="num2" placeholder="number2" class="ins" onkeypress="judging()">
+            <input id="fixsize1" value="=" readonly class="ins">
+            <input id="output" type="text" placeholder="answer" class="ins">
+        </form>
+    </div>
+</body>
+
+</html>
