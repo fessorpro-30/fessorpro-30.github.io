@@ -1,6 +1,7 @@
 body {
     margin: 0;
     overflow: scroll;
+    min-width:1215px;
 }
 
 .div1st {
