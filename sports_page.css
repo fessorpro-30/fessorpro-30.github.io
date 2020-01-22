@@ -1,0 +1,55 @@
+body {
+    margin: 0;
+    overflow: scroll;
+}
+
+.div1st {
+    width: 1215px;
+    height: 100px;
+    margin: 0 auto;
+    position: relative;
+}
+
+#firstDiv {
+    background-color: black;
+    width: 100%;
+}
+
+.headDiv {
+    margin: 0px;
+    padding: 0px;
+}
+
+#headLogo {
+    position: absolute;
+    left: 0px;
+}
+
+#headLogo a img {
+    height: 100px;
+    width: 150px;
+}
+
+#headGuide {
+    position: absolute;
+    left: 300px;
+    top: 30px;
+}
+
+#headList {
+    padding: 0px;
+    list-style: none;
+    margin: 0px;
+    overflow: hidden;
+}
+
+.headItems {
+    float: left;
+    margin-right: 70px;
+}
+
+.headItems a {
+    font-size: 18px;
+    text-decoration: none;
+    color: white;
+}
