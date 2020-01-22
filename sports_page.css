@@ -12,7 +12,7 @@ body {
 
 #firstDiv {
     background-color: black;
-    width: 100%;
+    width: device-width;
 }
 
 .headDiv {
