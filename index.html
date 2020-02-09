@@ -1,0 +1,173 @@
+<html lang="cn">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="./script.js"></script>
+    <title>天气预报</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            /* background-color: rgba(200, 76, 231, 0.705); */
+            background-image: url("./mobile_wallpaper.jpg");
+        }
+        
+        #bodyDiv {
+            text-align: center;
+        }
+        
+        #city {
+            margin-top: 200px;
+            font-weight: 500;
+            font-style: oblique;
+            color: orangered;
+        }
+        
+        table {
+            margin: auto;
+            margin-top: 20px;
+            width: 700px;
+            text-align: center;
+        }
+        
+        .tableHead {
+            background-color: rgba(31, 62, 236, 0.788);
+        }
+        
+        #yesterday {
+            background-color: rgba(168, 181, 255, 0.788);
+        }
+        
+        tr:nth-child(2) {
+            background-color: rgba(122, 142, 255, 0.788);
+        }
+        
+        tr:nth-child(3) {
+            background-color: rgba(95, 119, 253, 0.788);
+        }
+        
+        tr:nth-child(4) {
+            background-color: rgba(72, 99, 255, 0.788);
+        }
+        
+        tr:nth-child(5) {
+            background-color: rgba(40, 72, 255, 0.788);
+        }
+        
+        tr:nth-child(6) {
+            background-color: rgba(11, 48, 255, 0.788);
+        }
+        
+        #search {
+            margin-top: 20px;
+        }
+        
+        input {
+            height: 40px;
+            width: 250px;
+            outline: 0px;
+            /* border: 2px #bbb; */
+            /* border-style: inset; */
+            /* background-color: rgba(0, 38, 255, 0.26); */
+            margin-left: 0px;
+            margin-right: 20px;
+            border: 2px solid #324B4E;
+            background: #F9F0DA;
+            transition: .3s linear;
+            border-radius: 42px;
+            padding-left: 10px;
+        }
+        
+        input:focus {
+            width: 500px;
+        }
+        
+        button {
+            padding-left: 10px;
+            padding-right: 10px;
+            margin: 10px;
+            min-width: 70px;
+            height: 40px;
+            border: 2px #bbb solid;
+            /* border-radius: 10px; */
+            outline: 0px;
+            border: 2px solid #324B4E;
+            border-radius: 50px;
+            background-color: #F9F0DA;
+        }
+    </style>
+</head>
+
+<body onload="loadxml(2)">
+    <div id="bodyDiv">
+        <h1 id="city"></h1>
+        <table border="1">
+            <thead>
+                <td class="date tableHead">日期</td>
+                <td class="high tableHead">最高温</td>
+                <td class="low tableHead">最低温</td>
+                <!-- <td class="power">风力</td> -->
+                <td class="direction tableHead">风向</td>
+                <td class="weather tableHead">天气状况</td>
+            </thead>
+            <tr id="yesterday">
+                <td id="date1"></td>
+                <td id="high1"></td>
+                <td id="low1"></td>
+                <!-- <td id="power1"></td> -->
+                <td id="direction1"></td>
+                <td id="weather1"></td>
+            </tr>
+            <tr>
+                <td class="date"></td>
+                <td class="high"></td>
+                <td class="low"></td>
+                <!-- <td class="power"></td> -->
+                <td class="direction"></td>
+                <td class="weather"></td>
+            </tr>
+            <tr>
+                <td class="date"></td>
+                <td class="high"></td>
+                <td class="low"></td>
+                <!-- <td class="power"></td> -->
+                <td class="direction"></td>
+                <td class="weather"></td>
+            </tr>
+            <tr>
+                <td class="date"></td>
+                <td class="high"></td>
+                <td class="low"></td>
+                <!-- <td class="power"></td> -->
+                <td class="direction"></td>
+                <td class="weather"></td>
+            </tr>
+            <tr>
+                <td class="date"></td>
+                <td class="high"></td>
+                <td class="low"></td>
+                <!-- <td class="power"></td> -->
+                <td class="direction"></td>
+                <td class="weather"></td>
+            </tr>
+            <tr>
+                <td class="date"></td>
+                <td class="high"></td>
+                <td class="low"></td>
+                <!-- <td class="power"></td> -->
+                <td class="direction"></td>
+                <td class="weather"></td>
+            </tr>
+        </table>
+        <div id="search">
+            <input id="inputDiv" type="text" placeholder="请输入城市名或城市代码……" border="1">
+            <br>
+            <button onclick="loadxml(0)">搜城市名</button>
+            <button onclick="loadxml(1)">搜城市代码</button>
+        </div>
+    </div>
+</body>
+
+</html>
