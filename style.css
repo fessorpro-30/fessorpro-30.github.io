@@ -119,3 +119,81 @@ header .burger{
   cursor: pointer;
   outline: none;
 }
+
+/* 内容区域 */
+/* 通用样式 */
+
+.content-wrapper{
+  display: flex;
+  /* 垂直居中 */
+  align-items: center;
+  /* 水平居中 */
+  justify-content: center;
+}
+
+section{
+  display: grid;
+  /* background-color: aqua; */
+  justify-items: center;
+  max-width: 1120px;
+  padding: 0 80px;
+}
+
+.title1{
+  font-size: 34px;
+  color: var(--text-color-darker);
+}
+
+.title1::after{
+  content: "";
+  display: block;
+  width: 80%;
+  height: 4px;
+  background-color: var(--primary-color);
+  margin-top: 14px;
+  transform: translateX(10%);
+}
+
+.intro{
+  /* 上右下左 */
+  margin: 28px 0 60px 0;
+  font-size: 18px;
+  color: var(--text-color-dark-gray);
+}
+
+/* 关于我们 */
+.about-us{
+  padding-bottom: 32px;
+}
+.features{
+  display: grid;
+  grid-template-columns: repeat(3,1fr);
+  grid-template-rows: 126px 126px;
+  column-gap: 5vw;
+}
+.feature{
+  display: grid;
+  grid-template-areas: 
+    "icon title"
+    "icon content";
+  grid-template-columns: 60px 1fr;
+  grid-template-rows: 1fr 3fr;
+}
+
+.feature i.fas{
+  grid-area: icon;
+  font-size: 34px;
+  color: var(--primary-color);
+}
+
+.feature-tltle{
+  grid-area: title;
+  font-size: 18px;
+  color: var(--text-color-darker);
+}
+
+.feature-content{
+  grid-area: content;
+  color: var(--text-color-gray);
+  margin-top: 8px;
+}
