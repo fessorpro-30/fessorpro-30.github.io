@@ -55,6 +55,28 @@ header .burger {
   display: none;
 }
 
+header.sticky {
+  position: fixed;
+  background-color: white;
+  box-shadow: 0 0 18px rgba(0, 0, 0, 0.2);
+  animation: dropDown 0.5s ease-in-out forwards;
+}
+
+header.sticky .logo,
+header.sticky nav a,
+header.sticky nav i {
+  color: var(--text-color-darker);
+}
+
+@keyframes dropDown {
+  from {
+    transform: translateY(-100px);
+  }
+  to {
+    transform: translateY(0);
+  }
+}
+
 .glide {
   position: relative;
   top: -80px;
@@ -506,4 +528,83 @@ section {
 .activity:hover {
   transform: translateY(-20px) scale(1.05);
   box-shadow: 0px 0px 36px rgba(0, 0, 0, 0.1);
+}
+
+/* 底部信息 */
+footer {
+  margin-top: 124px;
+  background-color: #181818;
+  display: grid;
+  justify-items: center;
+  padding-top: 72px;
+  padding-bottom: 24px;
+}
+
+.footer-menus {
+  width: 100%;
+  max-width: 1180px;
+  display: grid;
+  grid-template-columns: 2fr repeat(4, 1fr);
+  padding: 0 80px;
+  position: relative;
+}
+
+.menu-title {
+  font-size: 16px;
+  color: white;
+  font-weight: 500;
+  margin-bottom: 20px;
+}
+
+.contact-us {
+  justify-self: start;
+  color: var(--text-color-lightest);
+}
+
+.contact-us p:not(:first-child) {
+  padding-bottom: 16px;
+}
+
+.menu-items li {
+  list-style: none;
+  padding-bottom: 8px;
+}
+
+.menu-items li a {
+  text-decoration: none;
+  font-weight: 300;
+  color: var(--text-color-lightest);
+}
+
+.icp-info {
+  margin-top: 24px;
+  margin-bottom: 16px;
+}
+
+.icp-info,
+.rights {
+  grid-column: 1/-1;
+  justify-self: center;
+  color: white;
+}
+
+.scrollToTop {
+  display: none;
+  z-index: 300;
+  position: relative;
+}
+
+.scrollToTop a {
+  width: 32px;
+  height: 32px;
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--primary-color);
+  color: white;
+  text-decoration: none;
+  position: fixed;
+  bottom: 60px;
+  right: 30px;
 }
